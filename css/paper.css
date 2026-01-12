@@ -1,0 +1,82 @@
+/* type of paper */
+.tit1 { font-size: 3rem; font-weight: 550; margin-bottom: 2.5rem;}
+.tit2 { font-size: 1.8rem; font-weight: 550; margin-bottom: 2rem;}
+
+.sub-header { position: relative; height: 400px; background: url(../images/sub/sub-bg.jpg) no-repeat; background-size: cover; text-align: center;}
+.sub-header em { position: relative; top: 230px; color: #fff; font-weight: 500; font-size: 23px;}
+.sub-header em:before { position: absolute; bottom: -20px; left: 50%; transform: translate(-50%); content: ""; display: block; width: 65px; height: 2px; background-color: #fff;}
+
+.breadcrumb { height: 48px; line-height: 48px;  background: #fff; border-bottom: 1px solid #ebebeb;}
+.breadcrumb:before { content:''; display: block; clear: both;}
+
+.breadcrumb li { position: relative; float: left; padding: 0 2rem 0 3rem;}
+.breadcrumb li:nth-child(2n) {background: #ebebeb;}
+.breadcrumb li:before { content: ''; display: block; clear:both;}
+.breadcrumb li:last-child a:after { display: none;}
+.breadcrumb li:nth-child(2n) a:after { border-left-color: #ebebeb;}
+.breadcrumb li:nth-child(2n+1) a:after { border-left-color: #535353;} 
+.breadcrumb a { display: block; font-size: 1.2rem;}
+.breadcrumb a:after { content: ''; position: absolute; top: 0; right: -20px; z-index: 5; border: 0 solid #333; border-width: 24px 10px; width: 0; height: 0; border-color: transparent;}
+.breadcrumb .home { padding-left: 8%; background: #535353;}
+.breadcrumb .home .home-icon { position: relative; padding-left: 3rem; color: #fff;}
+.breadcrumb .home .home-icon:before { content:''; position: absolute; top:0; left: -4px; width: 18px; height:18px; background:url(../images/sub/home.png) no-repeat; background-size: contain;}
+
+.paper-header { margin: 10rem 0 16rem; text-align: center;}
+.paper-header p { margin: auto; max-width: 930px; line-height: 1.6;}
+
+.bg { box-sizing: border-box; padding-top: 4rem; height: 360px; background: #ebebeb;}
+
+.swiper-container { margin: -6.5rem auto 0; padding-top: 6.5rem;}
+.swiper-button-next,
+.swiper-button-prev { top: 22px; width: 45px; height: 45px;}
+.swiper-button-next { right: 0; background: url(../images/sub/arrow-right.jpg);}
+.swiper-button-prev { right: 75px; left: auto; background: url(../images/sub/arow-left.jpg);}
+.swiper-slide { width: 300px; height: 280px; background:#fff;}
+.swiper-slide img { width: 100%; max-width: 100%; min-height: 100%;}
+.qa-box { margin-top: 10rem; padding: 2.4rem 0 2.4rem 14rem; border: 10px solid #f0f0f0;}
+.qa-box:after { content:''; display: block; clear: both;}
+
+.qa-icon, .qa-cont { float:left;}
+.qa-cont { padding: 10px 0 0 100px;}
+.qa-cont .h { margin-bottom: 1.2rem; font-size: 2.2rem; font-weight: 500;}
+.qa-cont p { font-size: 1.4rem; line-height: 1.6;}
+.qa-cont .btn { display: inline-block; margin-top: 1.5rem; height: 30px; padding: 0 2.5rem; line-height: 30px; font-size: 1.2rem; border: 1px solid black;}
+
+@media screen and (max-width: 1300px) {
+    .sub-header { height: 300px;}
+    .sub-header em { top: 150px;}
+}
+
+@media screen and (max-width: 769px) {
+    .tit1 { font-size: 2.4rem; margin-bottom: 1.5rem;}
+    .tit2 { font-size: 1.8rem; margin-bottom: 1.5rem;}
+    
+    .sub-header { height: 200px;}
+    .sub-header em { top: 100px; font-size: 1.8rem;}
+    .sub-header em:before { bottom: -10px; width: 50px;}
+    
+    .breadcrumb { height: 40px; line-height: 40px;}
+
+    .breadcrumb li { padding: 0 0.5rem 0 1.5rem;}
+    .breadcrumb a:after { border-width: 20px 10px;}
+    .breadcrumb .home { padding-left: 5%; background: #535353;}
+    .breadcrumb .home .home-icon { position: relative; padding-left: 2rem; color: #fff;}
+    
+    .paper-header { margin: 7rem 0;}
+    .paper-header p { font-size: 1.4rem;}
+
+    .bg { height: 260px;}
+
+    .swiper-button-prev { right: 65px;}
+    .swiper-slide { width: 220px; height: 180px; background:#fff;}
+    
+    .qa-box { margin-top: 7rem; padding-left: 0; text-align: center;}
+    
+
+    .qa-icon,
+    .qa-cont { float: none;}
+    .qa-icon img { width: 80px;}
+    .qa-cont { padding: 15px 0 0 0;}
+    .qa-cont p { font-size: 1.4rem;}
+    .qa-cont .btn { display: inline-block; margin-top: 10px; height: 35px; padding: 0 20px; line-height: 35px; font-size: 1.4rem; border: 1px solid black;}
+}

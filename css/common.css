@@ -1,0 +1,190 @@
+/* 공통 클레스 */
+
+/* 영문 서체 */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
+
+/* 한글 서체 */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500');
+
+html { font-size: 62.5%;}
+body { word-break: keep-all;}
+body,
+a { font-family: "Montserrat", "Noto Sans KR"; font-size: 1.6rem; color: #2e2e2e;}
+a[href^=tel] { font-size: 1.2rem; text-decoration:inherit; color: inherit; }
+
+.l-wrap { margin: 0 auto; max-width: 1200px;}
+.clearfix:after { content: ''; display: block; clear: both;}
+.is-pc { display: block;}
+.is-mob { display: none;}
+
+/* main */
+.header { position: fixed; z-index: 1000; padding: 30px 8%; width: 100%; box-sizing: border-box; transition: 0.5s;}
+.header:before { content:''; position: absolute; top: 0; left:0; right: 0; bottom: 110px; z-index: -1; background-color: rgba(0, 0, 0, 0); transition: 1s;}
+.header .logo { float: left;}
+
+.gnb { float: right;}
+.gnb a { color: #fff;}
+.gnb .gnb-nav { padding-top: 0.5rem;}
+.gnb .gnb-nav-mob { position: absolute; top: -100%;}
+.gnb .gnb-nav > li { float: left; margin-left: 5rem;}
+.gnb .gnb-nav a { display: block; padding: 1rem 2rem; font-size: 1.8rem; font-weight: 500;}
+.gnb .gnb-nav-sub { display: none; position: relative; padding-top: 0.5rem;}
+.gnb .gnb-nav-sub:before { content: ''; position: absolute; top: 0; left: 2rem; width: 2px; height: 2px; border-radius: 2px; background-color: #fff; transition: 0.5s;}
+.gnb .gnb-nav-sub.on:before { width: 30px;}
+.gnb .gnb-nav-sub a { padding: 0.8rem 2rem; font-size: 1.6rem; font-weight: 300;}
+
+.header.is-scroll { padding-top: 18px; padding-bottom: 18px;}
+.header.is-scroll:before { bottom: 0; background-color: rgba(0, 0, 0, 0.85);}
+
+/* footer */
+.footer { margin-top: 12rem; padding: 4rem 0; background-color: #2e2e2f; color: #fff; font-size: 1.4rem;}
+.footer .copyright {margin-top: 1rem; font-size: 1.2rem; color: #c5c5c5;}
+
+.footer-info { margin-top :1.2rem; line-height: 1.4;}
+.footer-info:after { content:''; display: block; clear: both;}
+.footer-info p { position: relative; float: left; color: #c5c5c5;}
+.footer-info p + p { margin-left: 5rem;}
+.footer-info p:after { content: ''; position: absolute; top: -1px; width: 20px; height: 20px;}
+.footer-info p:nth-child(2):after { left: -20px; background: url(../images/main/icon-phone--white.png) no-repeat;}
+.footer-info p:nth-child(3):after { left: -20px; background: url(../images/main/icon-cellphone--white.png) no-repeat;}
+.footer-info p:nth-child(4):after { left: -25px; background: url(../images/main/icon-mail--white.png) no-repeat;}
+
+@media screen and (max-width:1300px) {
+    .is-pc { display: none;}
+    .is-mob { display: block;}
+    .l-wrap { padding: 0 50px;}
+    
+    /* main */
+    .header { position: fixed; z-index: 1000; padding: 12px 5%; width: 100%; box-sizing: border-box;}
+    .gnb .gnb-nav { padding-top: 0.5rem;}
+    
+    /* 모바일 메뉴 */
+    .mob_menu_btn {
+        position: absolute;
+        top: 27px;
+        right: 5%;
+        width: 35px;
+        height: 26px;
+        cursor: pointer;
+        transition: transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1.000), margin 0.5s;
+       
+        -webkit-animation: menu_ani_r 1.5s ease 1;
+    }
+
+    .mob_menu_btn.active {
+        transform: rotate(45deg);
+        transition-delay: 0.4s;
+    }
+    .mob_menu_btn div {
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        margin-top: 10px;
+
+    }
+    .mob_menu_btn div.scroll {
+        background-color: #606060;
+    }
+    .mob_menu_btn div.scroll.active {
+        background-color: #fff;
+    }
+    .mob_menu_btn .menu_top {
+        margin-top: 0;
+        transform: scaleX(1);
+        transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1.000);
+        transition-delay: 0.4s;
+    }
+    .mob_menu_btn .menu_top.active {
+        transform: scaleX(0);
+        transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1.000);
+    }
+    .mob_menu_btn .menu_mid.active {
+        background-color: #fff;
+    }
+    .mob_menu_btn .menu_bottom {
+        transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1.000);
+        transition-delay: 0.4s;
+    }
+    .mob_menu_btn .menu_bottom.active {
+        width: 0;
+        transition: width 0.2s cubic-bezier(0.694, 0.048, 0.335, 1.000);
+    }
+    .mob_menu_btn .other_bar {
+        width: 2px;
+        height: 0px;
+        position: absolute;
+        top: -14px;
+        left: 16px;
+        transition: height 0.4s cubic-bezier(0.694, 0.048, 0.335, 1.000);
+        z-index: 50;
+    }
+    .mob_menu_btn .other_bar.active {
+        height: 35px;
+        transition: height 0.2s cubic-bezier(0.694, 0.048, 0.335, 1.000);
+        transition-delay: 0.3s;
+    }
+    .gnb .gnb-nav-mob { display: none; position: absolute; top: 0; left: 0; right: 0; z-index: -1; padding: 7rem 5% 3rem; background-color: rgb(0, 0, 0);}
+    .gnb .gnb-nav-mob > li { float: none; margin-left: 0; border-bottom: 1px solid #fff;}
+    .gnb .gnb-nav-mob a { display: block; padding: 2rem 2rem; font-size: 1.8rem;}
+    .gnb .gnb-nav-sub { padding-top: 0;}
+    .gnb .gnb-nav-sub:before { display: none;}
+    .gnb .gnb-nav-sub a { padding: 1.5rem 2rem; font-size: 1.6rem; font-weight: 300;}
+    .gnb .gnb-nav-sub a:first-child { padding-top: 0;}
+
+    .header.is-scroll:before { bottom: 0; background-color: rgba(0, 0, 0, 0.85);}
+    
+    /* footer */
+    .footer { margin-top: 8rem; padding: 4rem 0; background-color: #2e2e2f; color: #fff;}
+    .footer .copyright {margin-top: 1rem; font-size: 1.2rem; color: #c5c5c5;}
+
+    .footer-info { margin-top :1.2rem;}
+    .footer-info:after { content:''; display: block; clear: both;}
+    .footer-info p { position: relative; float: left;}
+    .footer-info p + p { margin-left: 1rem;}
+    .footer-info p:after { content: ''; position: absolute; top: 2px; width: 1px; height: 12px;}
+    .footer-info p:nth-child(2):after,
+    .footer-info p:nth-child(3):after,
+    .footer-info p:nth-child(4):after { background-color: #c5c5c5;}
+    .footer-info p:nth-child(2):after { left: -5px;}
+    .footer-info p:nth-child(3):after { left: -5px;}
+    .footer-info p:nth-child(4):after { left: -5px;}
+}
+
+@media screen and (max-width:769px) {
+    .l-wrap { padding: 0 10px;}
+    
+    /* main */
+    .header { position: fixed; z-index: 1000; padding: 12px 5%; width: 100%; box-sizing: border-box;}
+    .header.is-scroll { padding: 12px 5%;}
+    .header .logo img { width: 90px;}
+    .gnb .gnb-nav { padding-top: 0.5rem;}
+    
+    /* 모바일 메뉴 */
+    .mob_menu_btn {
+        top: 18px;
+        width: 28px;
+        height: 28px;
+    }
+    
+    .mob_menu_btn div {
+        margin-top: 8px;
+    }
+    
+    .mob_menu_btn .other_bar {
+        width: 2px;
+        top: -11px;
+        left: 13px;
+    }
+    .mob_menu_btn .other_bar.active {
+        height: 28px;
+    }
+    .gnb .gnb-nav-mob { display: none; position: absolute; top: 0; left: 0; right: 0; z-index: -1; padding: 7rem 5% 3rem; background-color: rgb(0, 0, 0);}
+    .gnb .gnb-nav-mob > li { float: none; margin-left: 0; border-bottom: 1px solid #fff;}
+    .gnb .gnb-nav-mob a { display: block; padding: 1.5rem 2rem; font-size: 1.8rem;}
+    .gnb .gnb-nav-sub { padding-top: 0;}
+    .gnb .gnb-nav-sub:before { display: none;}
+    .gnb .gnb-nav-sub a { padding: 1.2rem 2rem; font-size: 1.6rem; font-weight: 300;}
+    .gnb .gnb-nav-sub a:first-child { padding-top: 0;}
+
+    .header.is-scroll:before { bottom: 0; background-color: rgba(0, 0, 0, 0.85);}
+}
